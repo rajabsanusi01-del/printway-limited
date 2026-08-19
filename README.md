@@ -1,2 +1,230 @@
-# utc-area10-
-​Official landing page for UTC Area 10 Printing Hub Abuja
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printway Limited | Abuja's Premier Digital Printing Press</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background-color: #0b1120; color: #e2e8f0; line-height: 1.6; padding-bottom: 60px; }
+    
+    /* Optimized Header */
+    header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 1px solid #334155; padding: 40px 20px; text-align: center; }
+    .badge { background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); color: #fff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; display: inline-block; box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3); }
+    h1 { font-size: 32px; color: #fff; margin: 16px 0 8px; font-weight: 800; }
+    p.location { color: #94a3b8; font-size: 15px; margin-bottom: 16px; }
+    .status-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(34, 197, 94, 0.1); color: #22c55e; font-size: 14px; padding: 6px 14px; border-radius: 30px; border: 1px solid rgba(34, 197, 94, 0.2); }
+    .dot { width: 10px; height: 10px; background: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+
+    .container { max-width: 750px; margin: 20px auto; padding: 0 16px; }
+    .section-title { font-size: 20px; color: #f8fafc; margin: 30px 0 16px; font-weight: 700; letter-spacing: -0.5px; display: flex; align-items: center; gap: 10px; }
+    
+    /* Professional Icons using SVG */
+    .service-icon { width: 32px; height: 32px; fill: #38bdf8; margin-bottom: 10px; }
+
+    /* Services Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 16px; padding: 20px; text-align: center; transition: all 0.2s ease-in-out; }
+    .card:hover { border-color: #38bdf8; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    .card-title { font-size: 15px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+    .card-price { font-size: 13px; color: #38bdf8; font-weight: 600; }
+
+    /* Portfolio Section */
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    .portfolio-item { background: #1e293b; border-radius: 12px; height: 100px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #94a3b8; font-weight: 600; text-align: center; padding: 10px; position: relative; overflow: hidden; border: 1px solid #334155; }
+    .portfolio-item span { z-index: 1; }
+    
+    /* Mockup Portfolio Backgrounds using Gradients */
+    .mock-1 { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); } /* Business Card */
+    .mock-1::after { content: ''; position: absolute; top: 20px; left: 20px; width: 40px; height: 40px; border-radius: 50%; background: #38bdf8; opacity: 0.2; }
+    .mock-2 { background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); } /* Banner */
+    .mock-2::before { content: 'PRINTWAY'; position: absolute; font-size: 30px; opacity: 0.05; font-weight: 900; }
+    .mock-3 { background: radial-gradient(circle, #334155 0%, #1e293b 100%); } /* T-Shirt */
+    .mock-3::after { content: 'LOGO'; font-size: 11px; padding: 2px 6px; border: 1px solid #94a3b8; border-radius: 4px; opacity: 0.4; }
+
+    /* Interactive Order Form */
+    .form-card { background: #1e293b; border: 1px solid #334155; border-radius: 20px; padding: 24px; margin-top: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-size: 14px; font-weight: 600; color: #cbd5e1; margin-bottom: 8px; }
+    select, input, textarea { width: 100%; padding: 14px; background: #0b1120; border: 1px solid #334155; border-radius: 10px; color: #fff; font-size: 15px; outline: none; transition: border-color 0.2s; }
+    select:focus, input:focus, textarea:focus { border-color: #38bdf8; }
+    textarea { resize: none; }
+
+    /* Summary Box */
+    .summary-box { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); padding: 20px; border-radius: 14px; margin: 24px 0; text-align: center; box-shadow: inset 0 2px 5px rgba(255,255,255,0.1); }
+    .summary-box p { font-size: 14px; color: #e0f2fe; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+    .summary-box h2 { font-size: 36px; color: #fff; margin-top: 6px; font-weight: 800; }
+
+    /* Action Buttons */
+    .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    .btn-web { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; text-align: center; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); transition: transform 0.2s; }
+    .btn-web:active { transform: translateY(1px); }
+    .btn-whatsapp { background: #22c55e; color: white; text-decoration: none; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 16px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4); }
+
+    /* Success Modal */
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; padding: 20px; z-index: 999; backdrop-filter: blur(5px); }
+    .modal-content { background: #1e293b; border: 1px solid #38bdf8; padding: 30px; border-radius: 20px; text-align: center; max-width: 480px; width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+    .modal-content h3 { color: #22c55e; font-size: 24px; margin-bottom: 12px; font-weight: 800; }
+    .modal-content p { color: #cbd5e1; font-size: 15px; margin-bottom: 20px; }
+    .order-id { background: #0b1120; padding: 12px; border-radius: 10px; color: #38bdf8; font-weight: 800; font-size: 16px; margin-bottom: 24px; border: 1px solid #334155; }
+    .btn-close { background: #334155; color: white; border: none; padding: 12px 24px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+
+    footer { text-align: center; padding: 30px; color: #64748b; font-size: 13px; margin-top: 30px; border-top: 1px solid #334155; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">Abuja Central Hub</span>
+    <h1>Printway Limited</h1>
+    <p class="location">Murg Plaza, Area 10 Garki, Abuja (Opposite UTC)</p>
+    <div class="status-pill"><span class="dot"></span> Online Orders Open | Fast Production</div>
+  </header>
+
+  <div class="container">
+    
+    <div class="section-title">
+      <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-2.92L8.08 17H5.5l3.5-3.5L5.5 10h2.58L11 12.92V10h2v2.92L15.92 10H18.5l-3.5 3.5 3.5 3.5h-2.58L13 14.08V17h-2v-.5z"/></svg>
+      Core Services
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        <div class="card-title">Flyers & Handbills</div>
+        <div class="card-price">₦50 / sheet</div>
+      </div>
+      <div class="card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M5 15H3v4c0 1.1.9 2 2 2h4v-2H5v-4zM5 5h4V3H5c-1.1 0-2 .9-2 2v4h2V5zm14-2h-4v2h4v4h2V5c0-1.1-.9-2-2-2zm0 16h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+        <div class="card-title">Flex Banners</div>
+        <div class="card-price">₦1,500 / sq yd</div>
+      </div>
+      <div class="card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-2-9H6v2h12V9zm0 4H6v2h12v-2z"/></svg>
+        <div class="card-title">Business Cards</div>
+        <div class="card-price">₦120 / card</div>
+      </div>
+      <div class="card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M7 10c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3-3-1.34-3-3zm12-6h-4.18C14.4 1.84 12.38 1 10 1S5.6 1.84 5.18 4H1C.45 4 0 4.45 0 5s.45 1 1 1h1v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6h1c.55 0 1-.45 1-1s-.45-1-1-1zM4 18V6h12v12H4zm6-9.8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <div class="card-title">Branded Shirts</div>
+        <div class="card-price">₦3,500 / unit</div>
+      </div>
+    </div>
+
+    <!-- Portfolio Visuals -->
+    <div class="section-title">
+      <svg class="service-icon" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      Sample Work
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item mock-1"><span>Premium<br>Business Cards</span></div>
+      <div class="portfolio-item mock-2"><span>Large Format<br>Banners</span></div>
+      <div class="portfolio-item mock-3"><span>Branded<br>Corporate T-Shirts</span></div>
+    </div>
+
+    <!-- Order & Price Calculator -->
+    <div class="form-card">
+      <div class="section-title" style="margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #334155;">Place New Order</div>
+      
+      <form id="orderForm" onsubmit="submitWebOrder(event)" style="margin-top: 20px;">
+        <div class="form-group">
+          <label for="custName">Contact Name:</label>
+          <input type="text" id="custName" placeholder="e.g. John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">WhatsApp / Phone Number:</label>
+          <input type="tel" id="custPhone" placeholder="080XXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Print Service Required:</label>
+          <select id="service" onchange="calculate()">
+            <option value="50|Flyers / Handbills">Flyers & Handbills (₦50 / sheet)</option>
+            <option value="1500|Flex Banner Printing">Flex Banner Printing (₦1,500 / sq yard)</option>
+            <option value="120|Business Cards">Business Cards (₦120 / card)</option>
+            <option value="3500|Custom Branded T-Shirts">Custom Branded T-Shirts (₦3,500 / shirt)</option>
+            <option value="800|Book Binding">Book Binding (₦800 / book)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Order Quantity (Total Units):</label>
+          <input type="number" id="quantity" value="100" min="1" oninput="calculate()" required>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Artwork & Production Notes:</label>
+          <textarea id="details" rows="2" placeholder="Paper weight, size, color, single/double sided..." oninput="calculate()"></textarea>
+        </div>
+
+        <div class="summary-box">
+          <p>Instant Cost Estimate</p>
+          <h2 id="totalDisplay">₦5,000</h2>
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="btn-web">Submit Direct Order</button>
+          <a id="whatsappBtn" href="#" target="_blank" class="btn-whatsapp">Order via WhatsApp</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <svg style="width:48px;height:48px;fill:#22c55e;margin-bottom:15px;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      <h3>Order Submitted!</h3>
+      <p>Printway Limited has received your request. We will contact your phone number to confirm artwork and finalize billing.</p>
+      <div id="orderRef" class="order-id">Order Ref: #PW-1000</div>
+      <button class="btn-close" onclick="closeModal()">Close Window</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Printway Limited. All Rights Reserved.<br>Murg Plaza, Area 10 Garki, Abuja.
+  </footer>
+
+  <script>
+    function calculate() {
+      const serviceValue = document.getElementById('service').value.split('|');
+      const unitPrice = parseFloat(serviceValue[0]);
+      const serviceName = serviceValue[1];
+      const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+      const details = document.getElementById('details').value;
+
+      const total = unitPrice * quantity;
+      document.getElementById('totalDisplay').innerText = '₦' + total.toLocaleString();
+
+      let text = `Hello Printway Limited! I want to place an order:\n\n`;
+      text += `• *Service:* ${serviceName}\n`;
+      text += `• *Quantity:* ${quantity}\n`;
+      text += `• *Estimated Total:* ₦${total.toLocaleString()}\n`;
+      if (details.trim() !== '') {
+        text += `• *Notes:* ${details}\n`;
+      }
+      text += `\nPlease confirm production time!`;
+
+      document.getElementById('whatsappBtn').href = `https://wa.me/2348034513141?text=${encodeURIComponent(text)}`;
+    }
+
+    function submitWebOrder(e) {
+      e.preventDefault();
+      const randomRef = 'PW-' + Math.floor(100000 + Math.random() * 900000);
+      document.getElementById('orderRef').innerText = 'Order Ref: #' + randomRef;
+      document.getElementById('successModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').style.display = 'none';
+      document.getElementById('orderForm').reset();
+      calculate();
+    }
+
+    calculate(); // Initial calculation
+  </script>
+
+</body>
+</html>
